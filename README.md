@@ -22,16 +22,7 @@ pip install -r requirements.txt
 
 ## Configuration
 
-All credentials and settings are read from a `.env` file in the project directory (gitignored). Create it before running:
-
-```bash
-cat > .env <<'EOF'
-export SENDER_EMAIL='sender@example.com'
-export SENDER_EMAIL_PASSWORD='yourpassword'
-export RECIPIENTS='alice@example.com;bob@example.com'
-export KINDLE_RECIPIENTS='yourkindle@kindle.com'
-export SAVE_PATH='./epubs'
-EOF
+All credentials and settings are read from a `.env` file in the project directory (gitignored).
 ```
 
 | Variable | Required | Description |
