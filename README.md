@@ -78,24 +78,17 @@ python3 the_economist_scraper.py --latest --save-path /path/to/my/epubs
 
 EPUBs are saved under `<save-path>/<year>/` with names like `TE-2026-06-13.epub`.
 
-## Shell helper scripts
+## Shell helper
 
-| Script | Purpose |
-|---|---|
-| `download_and_sent_latest.sh` | Download the newest issue and email it |
-| `setup_cron.sh` | Install the Monday morning cron job |
-
-Both scripts source `.env` and `.venv` automatically — just run them from the project directory.
+`download_and_sent_latest.sh` downloads the newest issue and emails it. It sources `.env` and `.venv` automatically — just run it from the project directory.
 
 ### Automating with cron
 
-Run `setup_cron.sh` to install a cron job that fires every Monday at 07:00:
+Add a line like this to your crontab (`crontab -e`) to run every Monday at 07:00:
 
-```bash
-bash setup_cron.sh
 ```
-
-It logs to `~/.the_economist.log`.
+0 7 * * 1 /path/to/the-economist_scraper/download_and_sent_latest.sh >> ~/.the_economist.log 2>&1
+```
 
 ## License
 
